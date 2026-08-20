@@ -7,19 +7,19 @@ export type FeaturedClass = {
 
 export const heroSlides = [
   {
-    src: '/hero/forge-training-floor.svg',
+    src: '/hero/photo-1534438327276-14e5300c3a48.avif',
     alt: 'Training floor with racks, weights, and an open space for coached sessions',
     label: 'The training floor',
     detail: 'Room to do the work',
   },
   {
-    src: '/hero/forge-coaching-session.svg',
+    src: '/hero/photo-1581009146145-b5ef050c2e1e.avif',
     alt: 'Coach guiding a member through a strength training movement',
     label: 'Expert coaching',
     detail: 'Progress with purpose',
   },
   {
-    src: '/hero/forge-community.svg',
+    src: '/hero/photo-1723117418183-2422c62a5a75.avif',
     alt: 'Small group of gym members training together in a supportive community',
     label: 'The Forge community',
     detail: 'Stronger together',

@@ -104,4 +104,41 @@ describe('App', () => {
     expect(within(classCard).getByText('60 minutes')).toBeInTheDocument()
     expect(within(classCard).getByText('Saturday · 9:00 AM')).toBeInTheDocument()
   })
+
+  it('validates and submits the contact form with a mock success state', () => {
+    window.history.pushState({}, '', '/contact')
+    render(<App />)
+    const contactForm = within(screen.getByRole('region', { name: 'Send us a message.' }))
+
+    fireEvent.click(contactForm.getByRole('button', { name: 'Send message' }))
+    expect(screen.getByText('Please enter your name.')).toBeInTheDocument()
+    expect(screen.getByText('Please enter your email address.')).toBeInTheDocument()
+    expect(screen.getByText('Please tell us how we can help.')).toBeInTheDocument()
+
+    fireEvent.change(contactForm.getByLabelText('Name'), { target: { value: 'Casey Chen' } })
+    fireEvent.change(contactForm.getByLabelText('Email'), { target: { value: 'casey@example.com' } })
+    fireEvent.change(contactForm.getByLabelText('Message'), { target: { value: 'I have a question about memberships.' } })
+    fireEvent.click(contactForm.getByRole('button', { name: 'Send message' }))
+
+    expect(screen.getByRole('status')).toHaveTextContent('message has been received in demo mode')
+  })
+
+  it('validates and submits the trial form with a mock success state', () => {
+    window.history.pushState({}, '', '/contact')
+    render(<App />)
+    const trialForm = within(screen.getByRole('region', { name: 'Book a free trial.' }))
+
+    fireEvent.click(trialForm.getByRole('button', { name: 'Request free trial' }))
+    expect(screen.getByText('Please choose a preferred date.')).toBeInTheDocument()
+    expect(screen.getByText('Please choose a preferred time.')).toBeInTheDocument()
+
+    fireEvent.change(trialForm.getByLabelText('Name'), { target: { value: 'Casey Chen' } })
+    fireEvent.change(trialForm.getByLabelText('Email'), { target: { value: 'casey@example.com' } })
+    fireEvent.change(trialForm.getByLabelText('Preferred date'), { target: { value: '2026-09-01' } })
+    fireEvent.change(trialForm.getByLabelText('Preferred time'), { target: { value: 'Evening' } })
+    fireEvent.change(trialForm.getByLabelText('What would you like to work on?'), { target: { value: 'Build a consistent strength routine.' } })
+    fireEvent.click(trialForm.getByRole('button', { name: 'Request free trial' }))
+
+    expect(screen.getByRole('status')).toHaveTextContent('trial request is in')
+  })
 })

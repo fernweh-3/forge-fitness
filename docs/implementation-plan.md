@@ -18,9 +18,9 @@
 
 ## Phase 3: Forms
 
-- [ ] T12: Implement contact form
-- [ ] T13: Implement trial booking form
-- [ ] T14: Add mock submission states
+- [x] T12: Implement contact form
+- [x] T13: Implement trial booking form
+- [x] T14: Add mock submission states
 
 ## Phase 4: Quality
 
