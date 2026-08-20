@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { featuredClasses, gymInfo, testimonials } from '../data/home'
 
 const benefits = [
   {
@@ -59,6 +60,77 @@ export function HomePage() {
               <p>{benefit.description}</p>
             </article>
           ))}
+        </div>
+      </section>
+
+      <section className="home-classes" aria-labelledby="featured-classes-title">
+        <div className="section-heading section-heading--row">
+          <div>
+            <p className="page-placeholder__eyebrow">Train together</p>
+            <h2 id="featured-classes-title">Find your next session.</h2>
+          </div>
+          <Link className="text-link" to="/classes">
+            View all classes
+          </Link>
+        </div>
+        <div className="featured-class-list">
+          {featuredClasses.map((fitnessClass) => (
+            <article className="featured-class" key={fitnessClass.name}>
+              <p className="featured-class__level">{fitnessClass.level}</p>
+              <h3>{fitnessClass.name}</h3>
+              <p>{fitnessClass.description}</p>
+              <strong>{fitnessClass.schedule}</strong>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="home-testimonials" aria-labelledby="testimonials-title">
+        <div className="section-heading">
+          <p className="page-placeholder__eyebrow">Member notes</p>
+          <h2 id="testimonials-title">Good work gets noticed.</h2>
+        </div>
+        <div className="testimonial-list">
+          {testimonials.map((testimonial) => (
+            <figure className="testimonial" key={testimonial.name}>
+              <blockquote>“{testimonial.quote}”</blockquote>
+              <figcaption>
+                <strong>{testimonial.name}</strong>
+                <span>{testimonial.detail}</span>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+      </section>
+
+      <section className="home-details" aria-labelledby="visit-title">
+        <div className="home-details__intro">
+          <p className="page-placeholder__eyebrow">Come by</p>
+          <h2 id="visit-title">Make the gym part of your week.</h2>
+          <p>Drop in for a tour, meet the team, or start with a free trial session.</p>
+        </div>
+        <div className="home-details__columns">
+          <div>
+            <h3>Visit us</h3>
+            <address>
+              {gymInfo.address.map((line) => (
+                <span key={line}>{line}</span>
+              ))}
+            </address>
+            <a href={`tel:${gymInfo.phone.replace(/[^\d+]/g, '')}`}>{gymInfo.phone}</a>
+            <a href={`mailto:${gymInfo.email}`}>{gymInfo.email}</a>
+          </div>
+          <div>
+            <h3>Opening hours</h3>
+            <dl className="hours-list">
+              {gymInfo.hours.map(([day, hours]) => (
+                <div key={day}>
+                  <dt>{day}</dt>
+                  <dd>{hours}</dd>
+                </div>
+              ))}
+            </dl>
+          </div>
         </div>
       </section>
 

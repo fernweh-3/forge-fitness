@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { membershipPlans } from '../data/memberships'
+import { membershipFaqs, membershipPlans } from '../data/memberships'
 
 export function MembershipsPage() {
   return (
@@ -46,6 +46,21 @@ export function MembershipsPage() {
                 Choose {plan.name}
               </Link>
             </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="membership-faq" aria-labelledby="faq-title">
+        <div className="section-heading">
+          <p className="page-placeholder__eyebrow">Good to know</p>
+          <h2 id="faq-title">Membership questions, answered.</h2>
+        </div>
+        <div className="faq-list">
+          {membershipFaqs.map((faq) => (
+            <details className="faq-item" key={faq.question}>
+              <summary>{faq.question}</summary>
+              <p>{faq.answer}</p>
+            </details>
           ))}
         </div>
       </section>

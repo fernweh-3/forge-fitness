@@ -1,0 +1,57 @@
+export type FeaturedClass = {
+  name: string
+  description: string
+  schedule: string
+  level: string
+}
+
+export type Testimonial = {
+  quote: string
+  name: string
+  detail: string
+}
+
+export const featuredClasses: FeaturedClass[] = [
+  {
+    name: 'Strength Lab',
+    description: 'Progressive strength work with coaching for every experience level.',
+    schedule: 'Mon & Wed · 6:00 PM',
+    level: 'All levels',
+  },
+  {
+    name: 'Conditioning Club',
+    description: 'Build power and stamina through varied, coach-led intervals.',
+    schedule: 'Tue & Thu · 7:00 AM',
+    level: 'Intermediate',
+  },
+  {
+    name: 'Mobility Reset',
+    description: 'Move better, recover well, and leave ready for the next session.',
+    schedule: 'Sat · 10:00 AM',
+    level: 'All levels',
+  },
+]
+
+export const testimonials: Testimonial[] = [
+  {
+    quote: 'I finally found a training routine I can stick with. The coaches make every session feel achievable.',
+    name: 'Maya R.',
+    detail: 'Member since 2023',
+  },
+  {
+    quote: 'Forge feels serious about training without taking itself too seriously. I look forward to showing up.',
+    name: 'Jordan K.',
+    detail: 'Member since 2024',
+  },
+]
+
+export const gymInfo = {
+  address: ['184 Franklin Street', 'Brooklyn, NY 11222'],
+  phone: '(718) 555-0148',
+  email: 'hello@forgefitness.example',
+  hours: [
+    ['Monday - Friday', '5:30 AM - 10:00 PM'],
+    ['Saturday', '7:00 AM - 6:00 PM'],
+    ['Sunday', '8:00 AM - 4:00 PM'],
+  ],
+}

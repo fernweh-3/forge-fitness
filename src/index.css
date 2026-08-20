@@ -322,6 +322,15 @@ p {
   max-width: 40rem;
 }
 
+.section-heading--row {
+  align-items: end;
+  max-width: none;
+}
+
+.text-link {
+  width: fit-content;
+}
+
 .benefit-list {
   display: grid;
   gap: var(--space-6);
@@ -336,6 +345,135 @@ p {
 
 .benefit-item p {
   color: var(--color-ink-muted);
+}
+
+.home-classes,
+.home-testimonials,
+.home-details {
+  display: grid;
+  gap: var(--space-8);
+}
+
+.featured-class-list,
+.testimonial-list {
+  display: grid;
+  gap: var(--space-5);
+}
+
+.featured-class {
+  display: grid;
+  gap: var(--space-3);
+  border-top: 1px solid var(--color-border);
+  padding-top: var(--space-4);
+}
+
+.featured-class__level {
+  color: var(--color-accent-hover);
+  font-size: var(--text-sm);
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.featured-class p:not(.featured-class__level) {
+  color: var(--color-ink-muted);
+}
+
+.featured-class strong {
+  font-size: var(--text-sm);
+}
+
+.testimonial {
+  display: grid;
+  gap: var(--space-5);
+  margin: 0;
+  padding: var(--space-6);
+  background: var(--color-surface-raised);
+  box-shadow: var(--shadow-sm);
+}
+
+.testimonial blockquote {
+  margin: 0;
+  font-size: var(--text-lg);
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.testimonial figcaption {
+  display: grid;
+  gap: var(--space-1);
+}
+
+.testimonial figcaption span {
+  color: var(--color-ink-muted);
+  font-size: var(--text-sm);
+}
+
+.home-details {
+  padding: var(--space-8) var(--space-6);
+  background: var(--color-surface-dark);
+  color: var(--color-surface-raised);
+}
+
+.home-details h2,
+.home-details h3,
+.home-details .page-placeholder__eyebrow {
+  color: var(--color-surface-raised);
+}
+
+.home-details__intro {
+  display: grid;
+  gap: var(--space-4);
+  max-width: 34rem;
+}
+
+.home-details__intro > p:last-child,
+.home-details a,
+.home-details address,
+.hours-list {
+  color: #cbd1d3;
+}
+
+.home-details__columns {
+  display: grid;
+  gap: var(--space-8);
+}
+
+.home-details__columns > div {
+  display: grid;
+  align-content: start;
+  gap: var(--space-3);
+}
+
+.home-details address,
+.home-details__columns a {
+  display: grid;
+  font-style: normal;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+.hours-list {
+  display: grid;
+  gap: var(--space-3);
+  margin: 0;
+}
+
+.hours-list div {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-4);
+  border-bottom: 1px solid rgb(255 255 255 / 18%);
+  padding-bottom: var(--space-2);
+}
+
+.hours-list dt,
+.hours-list dd {
+  margin: 0;
+}
+
+.hours-list dd {
+  text-align: right;
 }
 
 .home-cta {
@@ -451,6 +589,43 @@ p {
   margin-top: auto;
 }
 
+.membership-faq {
+  display: grid;
+  gap: var(--space-8);
+  max-width: 52rem;
+}
+
+.faq-list {
+  border-top: 1px solid var(--color-border);
+}
+
+.faq-item {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.faq-item summary {
+  cursor: pointer;
+  font-size: var(--text-lg);
+  font-weight: 700;
+  list-style-position: outside;
+  padding: var(--space-5) var(--space-2) var(--space-5) 0;
+}
+
+.faq-item summary::marker {
+  color: var(--color-accent);
+}
+
+.faq-item p {
+  color: var(--color-ink-muted);
+  max-width: 44rem;
+  padding: 0 var(--space-2) var(--space-5) 0;
+}
+
+.faq-item summary:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
 @media (min-width: 40rem) {
   .home-hero {
     grid-template-columns: minmax(0, 1.2fr) minmax(14rem, 0.8fr);
@@ -462,6 +637,20 @@ p {
 
   .benefit-list {
     grid-template-columns: repeat(3, 1fr);
+  }
+
+  .section-heading--row {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .featured-class-list,
+  .testimonial-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .home-details__columns {
+    grid-template-columns: 1fr 1fr;
   }
 
   .home-cta {

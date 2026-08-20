@@ -21,6 +21,10 @@ describe('App', () => {
     expect(
       screen.getAllByRole('link', { name: 'Book a free trial' }),
     ).toHaveLength(2)
+    expect(screen.getByRole('heading', { name: 'Find your next session.' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: 'Good work gets noticed.' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: 'Opening hours' })).toBeInTheDocument()
+    expect(screen.getByText('184 Franklin Street')).toBeInTheDocument()
   })
 
   it('renders each configured route', () => {
@@ -47,5 +51,11 @@ describe('App', () => {
     expect(screen.getByRole('heading', { name: 'Annual' })).toBeInTheDocument()
     expect(screen.getByRole('heading', { name: 'Student' })).toBeInTheDocument()
     expect(screen.getByText('Best value')).toBeInTheDocument()
+    expect(
+      screen.getByRole('heading', { name: 'Membership questions, answered.' }),
+    ).toBeInTheDocument()
+    expect(
+      screen.getByText('Can I try Forge Fitness before joining?'),
+    ).toBeInTheDocument()
   })
 })
