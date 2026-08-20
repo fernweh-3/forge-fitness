@@ -51,5 +51,11 @@ describe('App', () => {
     expect(screen.getByRole('heading', { name: 'Annual' })).toBeInTheDocument()
     expect(screen.getByRole('heading', { name: 'Student' })).toBeInTheDocument()
     expect(screen.getByText('Best value')).toBeInTheDocument()
+    expect(
+      screen.getByRole('heading', { name: 'Membership questions, answered.' }),
+    ).toBeInTheDocument()
+    expect(
+      screen.getByText('Can I try Forge Fitness before joining?'),
+    ).toBeInTheDocument()
   })
 })
