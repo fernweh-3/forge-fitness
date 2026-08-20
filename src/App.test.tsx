@@ -1,4 +1,4 @@
-import { cleanup, fireEvent, render, screen } from '@testing-library/react'
+import { cleanup, fireEvent, render, screen, within } from '@testing-library/react'
 import { afterEach, describe, expect, it } from 'vitest'
 import App from './App'
 
@@ -72,5 +72,36 @@ describe('App', () => {
     expect(
       screen.getByText('Can I try Forge Fitness before joining?'),
     ).toBeInTheDocument()
+  })
+
+  it('lists classes with schedule details and filters by type and difficulty', () => {
+    window.history.pushState({}, '', '/classes')
+    render(<App />)
+
+    expect(screen.getByRole('heading', { name: 'Strength Lab' })).toBeInTheDocument()
+    expect(screen.getByText('Alex Morgan')).toBeInTheDocument()
+    expect(screen.getByText('Monday & Wednesday · 6:00 PM')).toBeInTheDocument()
+
+    fireEvent.change(screen.getByLabelText('Class type'), { target: { value: 'Mobility' } })
+    expect(screen.getAllByRole('article')).toHaveLength(2)
+    expect(screen.getByRole('heading', { name: 'Mobility Reset' })).toBeInTheDocument()
+    expect(screen.queryByRole('heading', { name: 'Strength Lab' })).not.toBeInTheDocument()
+
+    fireEvent.change(screen.getByLabelText('Difficulty'), { target: { value: 'Advanced' } })
+    expect(screen.getByRole('heading', { name: 'Classes' })).toBeInTheDocument()
+    expect(screen.getByRole('status')).toHaveTextContent('No classes match those filters')
+  })
+
+  it('renders the filtered class card with all required details', () => {
+    window.history.pushState({}, '', '/classes')
+    render(<App />)
+    fireEvent.change(screen.getByLabelText('Class type'), { target: { value: 'Conditioning' } })
+    fireEvent.change(screen.getByLabelText('Difficulty'), { target: { value: 'Advanced' } })
+
+    const classCard = screen.getByRole('article')
+    expect(within(classCard).getByRole('heading', { name: 'Engine Room' })).toBeInTheDocument()
+    expect(within(classCard).getByText('Maya Rivera')).toBeInTheDocument()
+    expect(within(classCard).getByText('60 minutes')).toBeInTheDocument()
+    expect(within(classCard).getByText('Saturday · 9:00 AM')).toBeInTheDocument()
   })
 })
