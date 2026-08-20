@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 620" role="img" aria-labelledby="title">
+  <title id="title">Forge Fitness community placeholder</title>
+  <rect width="800" height="620" fill="#F97316"/>
+  <path d="M0 445h800v175H0Z" fill="#1F2328"/>
+  <g fill="#F7F3EA">
+    <circle cx="205" cy="205" r="52"/>
+    <path d="M120 455c8-126 38-180 85-180s77 54 85 180Z"/>
+    <circle cx="400" cy="165" r="62"/>
+    <path d="M295 455c10-145 45-210 105-210s95 65 105 210Z"/>
+    <circle cx="595" cy="205" r="52"/>
+    <path d="M510 455c8-126 38-180 85-180s77 54 85 180Z"/>
+  </g>
+  <path d="M145 360h510" stroke="#F97316" stroke-width="12" stroke-linecap="round"/>
+</svg>

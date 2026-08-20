@@ -12,6 +12,11 @@ export function Header() {
     <header className="site-header">
       <div className="site-header__inner">
         <NavLink className="brand" to="/" aria-label="Forge Fitness home">
+          <img
+            className="brand__mark"
+            src="/brand/forge-fitness-mark.svg"
+            alt="Forge Fitness mark"
+          />
           Forge Fitness
         </NavLink>
         <nav className="site-nav" aria-label="Main navigation">

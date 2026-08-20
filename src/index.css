@@ -162,11 +162,20 @@ p {
 }
 
 .brand {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
   color: var(--color-ink);
   font-size: var(--text-lg);
   font-weight: 800;
   letter-spacing: 0.02em;
   text-decoration: none;
+}
+
+.brand__mark {
+  width: 2.25rem;
+  height: 2rem;
+  object-fit: contain;
 }
 
 .site-nav__list {
@@ -243,6 +252,12 @@ p {
   max-width: 36rem;
 }
 
+.home-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
 .button-link {
   display: inline-flex;
   width: fit-content;
@@ -277,32 +292,101 @@ p {
   color: var(--color-ink);
 }
 
-.home-hero__panel {
-  display: grid;
-  min-height: 16rem;
-  align-content: space-between;
-  padding: var(--space-6);
-  background: var(--color-surface-dark);
+.button-link--outline {
+  border: 1px solid var(--color-ink);
+  background: transparent;
+  color: var(--color-ink);
+}
+
+.button-link--outline:hover {
+  background: var(--color-ink);
   color: var(--color-surface-raised);
+}
+
+.hero-carousel {
+  min-width: 0;
+}
+
+.hero-carousel__frame {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  background: var(--color-surface-dark);
   box-shadow: var(--shadow-md);
 }
 
-.home-hero__panel span,
+.hero-carousel__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-carousel__caption {
+  position: absolute;
+  right: var(--space-4);
+  bottom: var(--space-4);
+  left: var(--space-4);
+  display: grid;
+  gap: var(--space-1);
+  padding: var(--space-3);
+  background: rgb(31 35 40 / 88%);
+  color: var(--color-surface-raised);
+}
+
+.hero-carousel__caption span {
+  color: #ffb078;
+  font-size: var(--text-xs);
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.hero-carousel__controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding-top: var(--space-3);
+}
+
+.hero-carousel__controls > button {
+  width: 2.75rem;
+  padding: 0;
+  font-size: var(--text-lg);
+}
+
+.hero-carousel__indicators {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.hero-carousel__indicators button {
+  min-width: 2.75rem;
+  min-height: 2.75rem;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: var(--color-ink-muted);
+  padding: var(--space-2);
+}
+
+.hero-carousel__indicators button::after {
+  display: block;
+  height: 0.25rem;
+  background: currentColor;
+  content: '';
+}
+
+.hero-carousel__indicators button.is-active {
+  color: var(--color-accent);
+}
+
 .benefit-item__number {
   color: var(--color-accent);
   font-size: var(--text-sm);
   font-weight: 800;
   letter-spacing: 0.08em;
-}
-
-.home-hero__panel strong {
-  font-size: clamp(2.5rem, 12vw, 5.5rem);
-  line-height: 0.9;
-  text-transform: uppercase;
-}
-
-.home-hero__panel p {
-  color: #cbd1d3;
 }
 
 .home-intro {
@@ -677,12 +761,59 @@ p {
   padding: var(--space-6) 0;
 }
 
+.site-footer__logo {
+  width: 7rem;
+  height: 5.5rem;
+  object-fit: contain;
+  object-position: left center;
+}
+
 .site-footer p:last-child {
   color: #cbd1d3;
   font-size: var(--text-sm);
 }
 
+.site-footer address,
+.site-footer__contact,
+.site-footer__hours {
+  display: grid;
+  gap: var(--space-1);
+  color: #cbd1d3;
+  font-size: var(--text-sm);
+  font-style: normal;
+}
+
+.site-footer__contact a {
+  color: var(--color-surface-raised);
+  text-decoration: none;
+}
+
+.site-footer__hours {
+  gap: var(--space-2);
+  margin: 0;
+}
+
+.site-footer__hours-title {
+  color: var(--color-surface-raised);
+  font-size: var(--text-sm);
+}
+
+.site-footer__hours div {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-4);
+}
+
+.site-footer__hours dt,
+.site-footer__hours dd {
+  margin: 0;
+}
+
 @media (min-width: 40rem) {
+  .home-hero {
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  }
+
   .site-header__inner {
     align-items: center;
     flex-direction: row;
@@ -693,6 +824,7 @@ p {
     align-items: center;
     flex-direction: row;
     justify-content: space-between;
+    flex-wrap: wrap;
   }
 }
 
