@@ -25,6 +25,7 @@ describe('App', () => {
     expect(screen.getByRole('heading', { name: 'Good work gets noticed.' })).toBeInTheDocument()
     expect(screen.getByRole('heading', { name: 'Opening hours' })).toBeInTheDocument()
     expect(screen.getByText('184 Franklin Street')).toBeInTheDocument()
+    expect(screen.getAllByAltText('Forge Fitness mark')).toHaveLength(2)
   })
 
   it('renders each configured route', () => {

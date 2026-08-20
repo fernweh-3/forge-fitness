@@ -162,11 +162,20 @@ p {
 }
 
 .brand {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
   color: var(--color-ink);
   font-size: var(--text-lg);
   font-weight: 800;
   letter-spacing: 0.02em;
   text-decoration: none;
+}
+
+.brand__mark {
+  width: 2.25rem;
+  height: 2rem;
+  object-fit: contain;
 }
 
 .site-nav__list {
@@ -285,6 +294,13 @@ p {
   background: var(--color-surface-dark);
   color: var(--color-surface-raised);
   box-shadow: var(--shadow-md);
+}
+
+.home-hero__mark {
+  width: 4.5rem;
+  height: 3.75rem;
+  object-fit: contain;
+  object-position: left center;
 }
 
 .home-hero__panel span,
@@ -675,6 +691,13 @@ p {
   flex-direction: column;
   gap: var(--space-2);
   padding: var(--space-6) 0;
+}
+
+.site-footer__logo {
+  width: 7rem;
+  height: 5.5rem;
+  object-fit: contain;
+  object-position: left center;
 }
 
 .site-footer p:last-child {

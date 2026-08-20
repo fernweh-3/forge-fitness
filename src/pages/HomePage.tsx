@@ -32,6 +32,11 @@ export function HomePage() {
           </Link>
         </div>
         <div className="home-hero__panel" aria-label="Training environment">
+          <img
+            className="home-hero__mark"
+            src="/brand/forge-fitness-mark-on-dark.svg"
+            alt="Forge Fitness mark"
+          />
           <span>01</span>
           <strong>Train<br />together.</strong>
           <p>Clear coaching. Real momentum.</p>
