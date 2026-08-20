@@ -92,13 +92,17 @@ export function HomePage() {
           <p className="page-placeholder__eyebrow">Member notes</p>
           <h2 id="testimonials-title">Good work gets noticed.</h2>
         </div>
-        <figure className="testimonial">
-          <blockquote>“{testimonials[0].quote}”</blockquote>
-          <figcaption>
-            <strong>{testimonials[0].name}</strong>
-            <span>{testimonials[0].detail}</span>
-          </figcaption>
-        </figure>
+        <div className="testimonial-list">
+          {testimonials.map((testimonial) => (
+            <figure className="testimonial" key={testimonial.name}>
+              <blockquote>“{testimonial.quote}”</blockquote>
+              <figcaption>
+                <strong>{testimonial.name}</strong>
+                <span>{testimonial.detail}</span>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
       </section>
 
       {/* <section className="home-details" aria-labelledby="visit-title">
