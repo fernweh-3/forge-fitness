@@ -9,9 +9,9 @@
 
 ## Phase 2: Core pages
 
-- [ ] T5: Implement Home hero and primary sections
+- [x] T5: Implement Home hero and primary sections
 - [ ] T6: Add classes, testimonials, hours, and address
-- [ ] T7: Implement membership plans
+- [x] T7: Implement membership plans
 - [ ] T8: Implement membership FAQ
 - [ ] T9: Implement class list
 - [ ] T10: Implement class filters
