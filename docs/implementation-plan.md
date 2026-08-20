@@ -13,14 +13,14 @@
 - [x] T6: Add classes, testimonials, hours, and address
 - [x] T7: Implement membership plans
 - [x] T8: Implement membership FAQ
-- [ ] T9: Implement class list
-- [ ] T10: Implement class filters
+- [x] T9: Implement class list
+- [x] T10: Implement class filters
 
 ## Phase 3: Forms
 
-- [ ] T12: Implement contact form
-- [ ] T13: Implement trial booking form
-- [ ] T14: Add mock submission states
+- [x] T12: Implement contact form
+- [x] T13: Implement trial booking form
+- [x] T14: Add mock submission states
 
 ## Phase 4: Quality
 
