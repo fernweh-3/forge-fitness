@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 620" role="img" aria-labelledby="title">
+  <title id="title">Forge Fitness coaching session placeholder</title>
+  <rect width="800" height="620" fill="#30373D"/>
+  <circle cx="270" cy="190" r="62" fill="#F7F3EA"/>
+  <path d="M170 440c12-120 52-180 100-180s88 60 100 180Z" fill="#F97316"/>
+  <circle cx="565" cy="150" r="48" fill="#F97316"/>
+  <path d="M500 400c8-96 30-145 65-145s57 49 65 145Z" fill="#F7F3EA"/>
+  <path d="M105 465h590" stroke="#1F2328" stroke-width="20" stroke-linecap="round"/>
+  <path d="M220 345 580 255" stroke="#F7F3EA" stroke-width="14" stroke-linecap="round"/>
+  <circle cx="190" cy="352" r="28" fill="#F97316"/>
+  <circle cx="610" cy="248" r="28" fill="#F97316"/>
+</svg>

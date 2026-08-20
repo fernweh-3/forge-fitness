@@ -5,6 +5,27 @@ export type FeaturedClass = {
   level: string
 }
 
+export const heroSlides = [
+  {
+    src: '/hero/forge-training-floor.svg',
+    alt: 'Training floor with racks, weights, and an open space for coached sessions',
+    label: 'The training floor',
+    detail: 'Room to do the work',
+  },
+  {
+    src: '/hero/forge-coaching-session.svg',
+    alt: 'Coach guiding a member through a strength training movement',
+    label: 'Expert coaching',
+    detail: 'Progress with purpose',
+  },
+  {
+    src: '/hero/forge-community.svg',
+    alt: 'Small group of gym members training together in a supportive community',
+    label: 'The Forge community',
+    detail: 'Stronger together',
+  },
+]
+
 export type Testimonial = {
   quote: string
   name: string

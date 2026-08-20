@@ -1,18 +1,19 @@
 import { Link } from 'react-router-dom'
-import { featuredClasses, gymInfo, testimonials } from '../data/home'
+import { HeroCarousel } from '../components/home/HeroCarousel'
+import { featuredClasses, heroSlides, testimonials } from '../data/home'
 
 const benefits = [
   {
-    title: 'Train with purpose',
-    description: 'Focused coaching and practical programming for measurable progress.',
+    title: 'Expert coaching',
+    description: 'Get clear guidance and practical programming for measurable progress.',
   },
   {
-    title: 'Built for every body',
-    description: 'A welcoming training floor with options for every starting point.',
+    title: 'Flexible classes',
+    description: 'Find coached sessions that fit your schedule, level, and goals.',
   },
   {
-    title: 'Show up stronger',
-    description: 'Build consistency with support that keeps your goals in reach.',
+    title: 'Supportive community',
+    description: 'Train alongside people who make showing up feel easier.',
   },
 ]
 
@@ -27,30 +28,26 @@ export function HomePage() {
             A modern local gym for focused training, expert guidance, and a
             stronger everyday life.
           </p>
-          <Link className="button-link" to="/contact">
-            Book a free trial
-          </Link>
+          <div className="home-hero__actions">
+            <Link className="button-link" to="/contact">
+              Book a Free Trial
+            </Link>
+            <Link className="button-link button-link--outline" to="/classes">
+              Explore Classes
+            </Link>
+          </div>
         </div>
-        <div className="home-hero__panel" aria-label="Training environment">
-          <img
-            className="home-hero__mark"
-            src="/brand/forge-fitness-mark-on-dark.svg"
-            alt="Forge Fitness mark"
-          />
-          <span>01</span>
-          <strong>Train<br />together.</strong>
-          <p>Clear coaching. Real momentum.</p>
-        </div>
+        <HeroCarousel slides={heroSlides} />
       </section>
 
-      <section className="home-intro" aria-labelledby="intro-title">
+      {/* <section className="home-intro" aria-labelledby="intro-title">
         <p className="page-placeholder__eyebrow">More than a workout</p>
         <h2 id="intro-title">A place to get stronger, your way.</h2>
         <p>
           Forge Fitness brings together smart training, a supportive community,
           and the tools to make progress feel possible week after week.
         </p>
-      </section>
+      </section> */}
 
       <section className="home-benefits" aria-labelledby="benefits-title">
         <div className="section-heading">
@@ -95,20 +92,16 @@ export function HomePage() {
           <p className="page-placeholder__eyebrow">Member notes</p>
           <h2 id="testimonials-title">Good work gets noticed.</h2>
         </div>
-        <div className="testimonial-list">
-          {testimonials.map((testimonial) => (
-            <figure className="testimonial" key={testimonial.name}>
-              <blockquote>“{testimonial.quote}”</blockquote>
-              <figcaption>
-                <strong>{testimonial.name}</strong>
-                <span>{testimonial.detail}</span>
-              </figcaption>
-            </figure>
-          ))}
-        </div>
+        <figure className="testimonial">
+          <blockquote>“{testimonials[0].quote}”</blockquote>
+          <figcaption>
+            <strong>{testimonials[0].name}</strong>
+            <span>{testimonials[0].detail}</span>
+          </figcaption>
+        </figure>
       </section>
 
-      <section className="home-details" aria-labelledby="visit-title">
+      {/* <section className="home-details" aria-labelledby="visit-title">
         <div className="home-details__intro">
           <p className="page-placeholder__eyebrow">Come by</p>
           <h2 id="visit-title">Make the gym part of your week.</h2>
@@ -137,15 +130,15 @@ export function HomePage() {
             </dl>
           </div>
         </div>
-      </section>
+      </section> */}
 
       <section className="home-cta" aria-labelledby="cta-title">
         <div>
           <p className="page-placeholder__eyebrow">Start here</p>
           <h2 id="cta-title">Your first session is on us.</h2>
         </div>
-        <Link className="button-link button-link--light" to="/contact">
-          Book a free trial
+          <Link className="button-link button-link--light" to="/contact">
+          Book a Free Trial
         </Link>
       </section>
     </div>
